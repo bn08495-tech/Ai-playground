@@ -1,23 +1,29 @@
 # MindVault — AI Knowledge Notebook
 
-A local-first Markdown knowledge notebook where the user can organize knowledge, skills, discoveries, projects, instructions, preferences, corrections, and learning history.
+Phase 2 adds an AI-ready local backend to the Phase 1 Markdown notebook.
 
-## MVP
+## Features
 
-- Dashboard
-- Structured knowledge sections
-- Markdown editor
+- Dashboard and structured Markdown notebook
+- Knowledge, skills, discoveries, user profile, instructions, preferences, projects, ideas, corrections, and learning history
 - Teach AI workflow with classification and approval
-- Search across notebook sections
-- Learning history
-- Markdown export/import
-- Local browser storage
-- Responsive dark interface
-
-## Direction
-
-Markdown remains the human-readable source of truth. A future backend can connect Ollama or an OpenAI-compatible provider for semantic retrieval, conflict detection, AI editing, embeddings, and automatic learning workflows.
+- Local browser persistence and Markdown export/import
+- AI provider proxy that keeps API keys out of frontend code
+- Ollama support for local models
+- OpenRouter support for cloud models
+- AI actions for suggesting notebook edits
 
 ## Run
 
-Open `index.html` in a browser or deploy the repository as a static site.
+```bash
+npm install
+cp .env.example .env
+node server.js
+```
+
+Open `http://localhost:3000`.
+
+For Ollama, set `AI_PROVIDER=ollama` and `OLLAMA_MODEL` in `.env`.
+For OpenRouter, set `AI_PROVIDER=openrouter`, `OPENROUTER_API_KEY`, and `AI_MODEL`.
+
+Never commit `.env` or API keys.
